@@ -1,11 +1,11 @@
-LDA 2200
-MOV E,A 
-MVI D,00H
-LDA 2201 
-MOV C,A 
-LXI H,0000 
-BACK: DAD D
-DCR C 
-JNZ BACK
-SHLD 2202 
-HLT
+LDA 2200     ; Load the value from memory address 2200 into the accumulator
+MOV E, A     ; Move the value in the accumulator to register E
+MVI D, 00H   ; Move the immediate value 00H into register D
+LDA 2201     ; Load the value from memory address 2201 into the accumulator
+MOV C, A     ; Move the value in the accumulator to register C
+LXI H, 0000H ; Load register pair H and L with the immediate value 0000H
+BACK: DAD D  ; Add the contents of register pair D to register pair H
+DCR C        ; Decrement the value in register C
+JNZ BACK     ; Jump to BACK if the zero flag is not set
+SHLD 2202    ; Store the contents of register pair H and L at memory address 2202
+HLT          ; Halt the program
