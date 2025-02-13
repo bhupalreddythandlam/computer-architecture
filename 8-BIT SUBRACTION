@@ -1,6 +1,6 @@
-LDA 8050
-MOV B,A
-LDA 8051
-SUB B
-STA 8052
-HLT
+LDA 8050 ; Load the value from memory address 8050 into the accumulator
+MOV B,A ; Move the value in the accumulator to register B
+LDA 8051 ; Load the value from memory address 8051 into the accumulator
+SUB B ; Subtract the value in register B from the value in the accumulator
+STA 8052 ; Store the value in the accumulator into memory address 8052
+HLT ; Halt the program
