@@ -1,0 +1,13 @@
+LDA 8500      ; Load value from 8500 to A
+MOV B, A      ; Move A to B
+LDA 8501      ; Load value from 8501 to A
+MVI C, 00     ; Move immediate 00 to C
+LOOP: CMP B   ; Compare A with B
+JC LOOP1      ; Jump if carry (A < B)
+SUB B         ; Subtract B from A
+INR C         ; Increment C
+JMP LOOP      ; Jump to LOOP
+LOOP1: STA 8502 ; Store A to 8502
+MOV A, C      ; Move C to A
+STA 8503      ; Store A to 8503
+HLT           ; Halt
